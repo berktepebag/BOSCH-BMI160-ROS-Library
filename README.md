@@ -40,3 +40,33 @@ ${catkin_LIBRARIES}
 ```
 rosrun other_package bmi160_acc_example
 ```
+
+## Warning!
+
+BMI160 is sharing I2C port with PCA9685 as a slave. In the original code, address is 0x68. Since BMI160 is a slave now, line 590 in bmi160_defs.h had been changed to:
+
+```
+/* BMI160 I2C address */
+#define BMI160_I2C_ADDR                      UINT8_C(0x69)
+```
+
+The address to be written above can be found by the command:
+```
+i2cdetect -y -r 1
+```
+which returns:
+```
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+40: 40 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+60: -- -- -- -- -- -- -- -- -- 69 -- -- -- -- -- -- 
+70: 70 -- -- -- -- -- -- --   
+```
+
+## I2C Connection
+
+<img src="imgs/car-notcar.JPG" alt="alt text" title="Car - Not Car Example" style="max-width:100%;">
