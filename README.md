@@ -69,4 +69,5 @@ which returns:
 
 ## I2C Connection
 
+Jetson Nano I2C pins used showed with red, 1,3,5,6.
 <img src="imgs/BMI160_I2C_pin_layout.png" alt="alt text" title="BMI160 I2C pin layout" style="max-width:100%;">
