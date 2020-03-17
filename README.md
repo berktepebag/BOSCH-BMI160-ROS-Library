@@ -69,4 +69,4 @@ which returns:
 
 ## I2C Connection
 
-<img src="imgs/car-notcar.JPG" alt="alt text" title="Car - Not Car Example" style="max-width:100%;">
+<img src="imgs/BMI160_I2C_pin_layout.png" alt="alt text" title="BMI160 I2C pin layout" style="max-width:100%;">
